@@ -118,6 +118,34 @@ export default function Home() {
             </Link>
           </div>
         </section>
+
+        <section className="section-wrap pb-20">
+          <div className="grid gap-8 rounded-3xl bg-white p-8 card-shadow md:grid-cols-[260px_1fr]">
+            <Image
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80"
+              alt="CEO portrait"
+              width={500}
+              height={650}
+              className="h-full min-h-72 w-full rounded-2xl object-cover"
+            />
+            <div>
+              <h2 className="display-font text-3xl font-bold text-[#2f342d]">A Note from the CEO</h2>
+              <p className="mt-4 leading-8 text-[#4d5448]">
+                Welcome to Gemsland School Abuja. We are dedicated to building an environment where
+                children learn with confidence, discover their talents, and develop the character
+                needed to thrive in the future. We look forward to partnering with you on your
+                child&apos;s success journey.
+              </p>
+              <p className="mt-5 font-semibold text-[#2f342d]">- Dr. Samuel Adeyemi, CEO</p>
+              <Link
+                href="/about"
+                className="mt-5 inline-flex rounded-full bg-[#969e8f] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#7f8679]"
+              >
+                Learn More About Our Leadership
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
       <SiteFooter />
       <WhatsAppFloat />
