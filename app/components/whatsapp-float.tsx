@@ -27,7 +27,7 @@ export function WhatsAppFloat() {
       {open ? (
         <div className="mb-3 w-[92vw] max-w-sm rounded-2xl border border-[#25d366]/25 bg-white p-4 shadow-xl">
           <div className="mb-3 flex items-center justify-between">
-            <p className="text-sm font-semibold text-[#2f342d]">WhatsApp Chat Assistant</p>
+            <p className="text-sm font-semibold text-[#2f342d]">Chat Assistant</p>
             <button
               type="button"
               onClick={() => setOpen(false)}
