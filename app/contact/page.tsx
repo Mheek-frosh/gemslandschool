@@ -9,6 +9,7 @@ import { WhatsAppFloat } from "@/app/components/whatsapp-float";
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [notice, setNotice] = useState("");
+  const whatsappNumber = "2347054885172";
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -17,23 +18,19 @@ export default function ContactPage() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const payload = Object.fromEntries(formData.entries());
+    const name = String(formData.get("name") || "");
+    const message = String(formData.get("message") || "");
+    const whatsappText = [
+      "New Contact Message - Gemsland School Abuja",
+      `Name: ${name}`,
+      `Message: ${message}`,
+    ].join("\n");
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
     setLoading(false);
-
-    if (res.ok) {
-      form.reset();
-      setNotice("Message submitted successfully. We will get back to you soon.");
-      return;
-    }
-
-    setNotice("Unable to submit message right now. Please try again.");
+    form.reset();
+    setNotice("Redirected to WhatsApp. Please tap send in WhatsApp to deliver your message.");
   }
 
   return (
@@ -93,7 +90,7 @@ export default function ContactPage() {
                 disabled={loading}
                 className="rounded-full bg-[#969e8f] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#7f8679] disabled:opacity-70"
               >
-                {loading ? "Submitting..." : "Submit"}
+                {loading ? "Preparing..." : "Submit"}
               </button>
               {notice ? <p className="text-sm font-medium text-[#4b5345]">{notice}</p> : null}
             </div>

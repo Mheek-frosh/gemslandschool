@@ -8,6 +8,7 @@ import { WhatsAppFloat } from "@/app/components/whatsapp-float";
 export default function EnrollPage() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const whatsappNumber = "2347054885172";
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -16,23 +17,30 @@ export default function EnrollPage() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const payload = Object.fromEntries(formData.entries());
+    const parentName = String(formData.get("parentName") || "");
+    const phone = String(formData.get("phone") || "");
+    const email = String(formData.get("email") || "");
+    const childName = String(formData.get("childName") || "");
+    const program = String(formData.get("program") || "");
+    const preferredStartDate = String(formData.get("preferredStartDate") || "");
+    const notes = String(formData.get("notes") || "");
 
-    const res = await fetch("/api/enroll", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
+    const whatsappText = [
+      "New Enrollment Request - Gemsland School Abuja",
+      `Parent Name: ${parentName}`,
+      `Phone: ${phone}`,
+      `Email: ${email}`,
+      `Child Name: ${childName}`,
+      `Program: ${program}`,
+      `Preferred Start Date: ${preferredStartDate}`,
+      `Additional Notes: ${notes}`,
+    ].join("\n");
 
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
     setLoading(false);
-
-    if (res.ok) {
-      form.reset();
-      setMessage("Application sent successfully. Our admissions team will contact you shortly.");
-      return;
-    }
-
-    setMessage("Something went wrong. Please try again.");
+    form.reset();
+    setMessage("Redirected to WhatsApp. Please tap send in WhatsApp to submit this enrollment.");
   }
 
   return (
@@ -67,7 +75,7 @@ export default function EnrollPage() {
             disabled={loading}
             className="rounded-full bg-[#969e8f] px-7 py-3 font-semibold text-white transition hover:bg-[#7f8679] disabled:opacity-70"
           >
-            {loading ? "Sending..." : "Send Application"}
+            {loading ? "Preparing..." : "Send Application"}
           </button>
         </form>
 
