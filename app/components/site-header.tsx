@@ -14,7 +14,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-[#969e8f]/20 bg-[#fbfbf8]/90 backdrop-blur-md">
       <nav className="section-wrap flex h-20 items-center justify-between gap-3">
         <Link href="/" className="display-font text-lg font-bold tracking-wide text-[#4b5345]">
-          Greenlands School Abuja
+          Greenlands School
         </Link>
         <div className="hidden items-center gap-7 md:flex">
           {navLinks.map((link) => {
