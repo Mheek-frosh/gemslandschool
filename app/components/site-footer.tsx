@@ -6,7 +6,7 @@ export function SiteFooter() {
     <footer className="bg-[#2f342d] py-12 text-[#f5f5ef]">
       <div className="section-wrap grid gap-8 md:grid-cols-3">
         <div>
-          <h3 className="display-font text-xl font-semibold">Gemsland School Abuja</h3>
+          <h3 className="display-font text-xl font-semibold">Greenlands School Abuja</h3>
           <p className="mt-3 text-sm text-[#d8decf]">
             Raising confident learners with excellence, care, and character.
           </p>
@@ -31,7 +31,7 @@ export function SiteFooter() {
         </div>
       </div>
       <p className="mt-10 text-center text-xs text-[#c7cfbd]">
-        © {new Date().getFullYear()} Gemsland School Abuja. All rights reserved.
+        © {new Date().getFullYear()} Greenlands School Abuja. All rights reserved.
       </p>
     </footer>
   );

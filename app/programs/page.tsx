@@ -10,7 +10,7 @@ export default function ProgramsPage() {
       <main className="section-wrap py-16">
         <h1 className="display-font text-4xl font-bold">Our Programs</h1>
         <p className="mt-4 max-w-3xl text-[#4c4f45]">
-          Every level at Gemsland is intentionally designed to support growth, confidence, and
+          Every level at Greenlands is intentionally designed to support growth, confidence, and
           academic excellence in a safe environment.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">

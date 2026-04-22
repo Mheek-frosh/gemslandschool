@@ -21,7 +21,7 @@ export default function ContactPage() {
     const name = String(formData.get("name") || "");
     const message = String(formData.get("message") || "");
     const whatsappText = [
-      "New Contact Message - Gemsland School Abuja",
+      "New Contact Message - Greenlands School Abuja",
       `Name: ${name}`,
       `Message: ${message}`,
     ].join("\n");
@@ -63,7 +63,7 @@ export default function ContactPage() {
           </div>
           <div className="overflow-hidden rounded-3xl border border-white/70 bg-white/80 p-2 lg:col-span-1">
             <iframe
-              title="Gemsland School Abuja Location"
+              title="Greenlands School Abuja Location"
               src="https://maps.google.com/maps?q=Lokogoma%20Abuja&t=&z=13&ie=UTF8&iwloc=&output=embed"
               className="h-[360px] w-full rounded-2xl"
               loading="lazy"
