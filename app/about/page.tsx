@@ -61,6 +61,44 @@ export default function AboutPage() {
           </details>
         </section>
 
+        <section className="mt-12 rounded-3xl bg-[#f7f7f2] p-7">
+          <h2 className="display-font text-3xl font-semibold">About Us Dropdown</h2>
+          <p className="mt-2 text-[#586052]">
+            Click each dropdown to learn key information about Gemsland School Abuja.
+          </p>
+          <div className="mt-5 space-y-4">
+            <details className="rounded-2xl border border-[#cfd4c6] bg-white p-5">
+              <summary className="cursor-pointer text-lg font-semibold text-[#2f342d]">
+                Our Educational Philosophy
+              </summary>
+              <p className="mt-3 leading-8 text-[#4d5348]">
+                We believe every child can excel when learning is structured, engaging, and
+                connected to real-life values. Our teaching balances academics, creativity, and
+                character building.
+              </p>
+            </details>
+            <details className="rounded-2xl border border-[#cfd4c6] bg-white p-5">
+              <summary className="cursor-pointer text-lg font-semibold text-[#2f342d]">
+                Facilities and Learning Spaces
+              </summary>
+              <p className="mt-3 leading-8 text-[#4d5348]">
+                Our classrooms are designed to be safe, child-friendly, and interactive, with spaces
+                that support reading, group projects, science activities, and creative expression.
+              </p>
+            </details>
+            <details className="rounded-2xl border border-[#cfd4c6] bg-white p-5">
+              <summary className="cursor-pointer text-lg font-semibold text-[#2f342d]">
+                Parent Partnership and Communication
+              </summary>
+              <p className="mt-3 leading-8 text-[#4d5348]">
+                We maintain close communication with parents through regular feedback, progress
+                updates, and collaborative support so every child receives consistent guidance at
+                school and at home.
+              </p>
+            </details>
+          </div>
+        </section>
+
         <section className="mt-14">
           <h2 className="display-font text-3xl font-semibold">Meet the Staff</h2>
           <p className="mt-3 max-w-3xl text-[#4d5348]">

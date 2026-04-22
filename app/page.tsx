@@ -10,8 +10,30 @@ import { SiteFooter } from "@/app/components/site-footer";
 import { WhatsAppFloat } from "@/app/components/whatsapp-float";
 import { heroSlides } from "@/app/lib/site-data";
 
+const promoSlides = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1476234251651-f353703a034d?auto=format&fit=crop&w=1600&q=80",
+    title: "2026/2027 Admission Is Ongoing",
+    text: "Secure your child's place at Gemsland School Abuja today and enjoy a warm, excellence-driven learning journey in a safe, premium environment.",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80",
+    title: "Limited Spaces in Crèche and Nursery",
+    text: "Give your child a strong head start with structured early years learning, care, and social development.",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1588072432904-843af37f03ed?auto=format&fit=crop&w=1600&q=80",
+    title: "Join a School Built on Values and Excellence",
+    text: "Our team partners with families to raise confident learners with character, creativity, and leadership skills.",
+  },
+];
+
 export default function Home() {
   const [slide, setSlide] = useState(0);
+  const [promoSlide, setPromoSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -20,12 +42,19 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const promoTimer = setInterval(() => {
+      setPromoSlide((prev) => (prev + 1) % promoSlides.length);
+    }, 4500);
+    return () => clearInterval(promoTimer);
+  }, []);
+
   return (
     <div className="relative min-h-screen">
       <SiteHeader />
       <main>
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/75 via-black/60 to-black/50" />
           {heroSlides.map((item, index) => (
             <motion.div
               key={item.image}
@@ -34,7 +63,13 @@ export default function Home() {
               transition={{ duration: 0.9 }}
               className="absolute inset-0"
             >
-              <Image src={item.image} alt={item.title} fill priority className="object-cover" />
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                priority
+                className="object-cover brightness-[0.68] contrast-75 saturate-90"
+              />
             </motion.div>
           ))}
           <div className="section-wrap relative z-10 flex min-h-[75vh] items-center py-20">
@@ -144,6 +179,69 @@ export default function Home() {
                 Learn More About Our Leadership
               </Link>
             </div>
+          </div>
+        </section>
+
+        <section className="section-wrap pb-20">
+          <div className="relative overflow-hidden rounded-3xl">
+            {promoSlides.map((item, index) => (
+              <motion.div
+                key={item.image}
+                initial={false}
+                animate={{ opacity: promoSlide === index ? 1 : 0 }}
+                transition={{ duration: 0.8 }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={1600}
+                  height={720}
+                  className="h-[330px] w-full object-cover md:h-[380px]"
+                />
+              </motion.div>
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#2f342d]/85 via-[#2f342d]/70 to-[#969e8f]/55" />
+            <div className="absolute inset-0 flex items-center">
+              <div className="section-wrap">
+                <div className="max-w-2xl text-white">
+                  <p className="inline-flex rounded-full border border-white/55 bg-white/15 px-4 py-1 text-xs font-semibold tracking-wide">
+                    PROMOTIONAL OFFER
+                  </p>
+                  <h2 className="display-font mt-4 text-3xl font-bold md:text-4xl">
+                    {promoSlides[promoSlide].title}
+                  </h2>
+                  <p className="mt-3 text-white/90">
+                    {promoSlides[promoSlide].text}
+                  </p>
+                  <Link
+                    href="/enroll"
+                    className="mt-6 inline-flex rounded-full bg-[#eee0af] px-7 py-3 text-sm font-semibold text-[#2f342d] transition hover:bg-[#f6ebc8]"
+                  >
+                    Apply for Admission Now
+                  </Link>
+                  <div className="mt-5 flex items-center gap-3">
+                    <button
+                      onClick={() =>
+                        setPromoSlide((prev) => (prev - 1 + promoSlides.length) % promoSlides.length)
+                      }
+                      className="rounded-full border border-white/70 p-2 transition hover:bg-white/20"
+                      aria-label="Previous promotional slide"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button
+                      onClick={() => setPromoSlide((prev) => (prev + 1) % promoSlides.length)}
+                      className="rounded-full border border-white/70 p-2 transition hover:bg-white/20"
+                      aria-label="Next promotional slide"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="h-[330px] md:h-[380px]" />
           </div>
         </section>
       </main>
