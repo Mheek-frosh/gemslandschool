@@ -26,7 +26,7 @@ export default function EnrollPage() {
     const notes = String(formData.get("notes") || "");
 
     const whatsappText = [
-      "New Enrollment Request - Greenlands School Abuja",
+      "New Enrollment Request - Gemsland School Abuja",
       `Parent Name: ${parentName}`,
       `Phone: ${phone}`,
       `Email: ${email}`,

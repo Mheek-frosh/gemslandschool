@@ -14,11 +14,11 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Greenlands School Abuja | Excellence and Care",
+  title: "Gemsland School Abuja | Excellence and Care",
   description:
-    "Greenlands School Abuja is a private co-educational institution in Lokogoma offering crèche, nursery, primary, and lower secondary education in a serene and child-friendly environment.",
+    "Gemsland School Abuja is a private co-educational institution in Lokogoma offering crèche, nursery, primary, and lower secondary education in a serene and child-friendly environment.",
   keywords: [
-    "Greenlands School Abuja",
+    "Gemsland School Abuja",
     "private school in Abuja",
     "Lokogoma school",
     "nursery and primary school",

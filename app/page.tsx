@@ -15,7 +15,7 @@ const promoSlides = [
     image:
       "https://images.unsplash.com/photo-1476234251651-f353703a034d?auto=format&fit=crop&w=1600&q=80",
     title: "2026/2027 Admission Is Ongoing",
-    text: "Secure your child's place at Greenlands School Abuja today and enjoy a warm, excellence-driven learning journey in a safe, premium environment.",
+    text: "Secure your child's place at Gemsland School Abuja today and enjoy a warm, excellence-driven learning journey in a safe, premium environment.",
   },
   {
     image:
@@ -75,7 +75,7 @@ export default function Home() {
           <div className="section-wrap relative z-10 flex min-h-[75vh] items-center py-20">
             <div className="max-w-3xl text-white">
               <p className="mb-4 inline-flex rounded-full border border-white/60 bg-white/20 px-4 py-1.5 text-sm font-medium">
-                Welcome to Greenlands School Abuja
+                Welcome to Gemsland School Abuja
               </p>
               <h1 className="display-font text-4xl font-bold leading-tight md:text-6xl">
                 {heroSlides[slide].title}
@@ -166,7 +166,7 @@ export default function Home() {
             <div>
               <h2 className="display-font text-3xl font-bold text-[#2f342d]">A Note from the CEO</h2>
               <p className="mt-4 leading-8 text-[#4d5448]">
-                Welcome to Greenlands School Abuja. We are dedicated to building an environment where
+                Welcome to Gemsland School Abuja. We are dedicated to building an environment where
                 children learn with confidence, discover their talents, and develop the character
                 needed to thrive in the future. We look forward to partnering with you on your
                 child&apos;s success journey.

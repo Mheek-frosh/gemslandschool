@@ -8,9 +8,9 @@ export default function AboutPage() {
     <div>
       <SiteHeader />
       <main className="section-wrap py-16">
-        <h1 className="display-font text-4xl font-bold">About Greenlands School Abuja</h1>
+        <h1 className="display-font text-4xl font-bold">About Gemsland School Abuja</h1>
         <p className="mt-5 max-w-4xl text-lg leading-8 text-[#44463d]">
-          Greenlands School Abuja is a private co-educational institution in Lokogoma, Abuja,
+          Gemsland School Abuja is a private co-educational institution in Lokogoma, Abuja,
           Nigeria. It provides early childhood, primary, and lower secondary education within a
           serene and child-friendly learning environment.
         </p>
@@ -64,7 +64,7 @@ export default function AboutPage() {
         <section className="mt-12 rounded-3xl bg-[#f7f7f2] p-7">
           <h2 className="display-font text-3xl font-semibold">About Us Dropdown</h2>
           <p className="mt-2 text-[#586052]">
-            Click each dropdown to learn key information about Greenlands School Abuja.
+            Click each dropdown to learn key information about Gemsland School Abuja.
           </p>
           <div className="mt-5 space-y-4">
             <details className="rounded-2xl border border-[#cfd4c6] bg-white p-5">
@@ -154,7 +154,7 @@ export default function AboutPage() {
           <div>
             <h2 className="display-font text-3xl font-semibold">Meet the CEO</h2>
             <p className="mt-4 leading-8 text-[#4d5348]">
-              At Greenlands School Abuja, we believe every child deserves a strong educational
+              At Gemsland School Abuja, we believe every child deserves a strong educational
               foundation in a secure, inspiring, and values-driven environment. Our commitment is to
               partner with families to raise future-ready leaders.
             </p>

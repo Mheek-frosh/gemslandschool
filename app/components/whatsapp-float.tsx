@@ -17,7 +17,7 @@ export function WhatsAppFloat() {
   function sendChat() {
     const content = chatText.trim();
     if (!content) return;
-    openWhatsAppWithText(`Hello Greenlands School Abuja,\n\n${content}`);
+    openWhatsAppWithText(`Hello Gemsland School Abuja,\n\n${content}`);
     setChatText("");
     setOpen(false);
   }
